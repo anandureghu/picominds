@@ -5,7 +5,7 @@ import Button from "@/components/ui/button";
 
 const Header = () => {
   return (
-    <main className="bg-black/10 h-dvh text-indigo-200 relative flex items-center justify-center">
+    <main className="h-dvh relative flex items-center justify-center">
       <div className="flex-col gap-2 w-full text-center max-w-3/4">
         <h2 className="text-2xl">
           Let&apos;s start 🚀 your next big tech project with
