@@ -47,7 +47,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="Picominds" />
       </head>
       <body
-        className={`${fahkwang.variable} ${gilda.variable} ${fustat.variable} ${fredoka.variable} antialiased`}
+        className={`${fahkwang.variable} ${gilda.variable} ${fredoka.variable} ${fustat.variable} antialiased text-indigo-200 font-secondary`}
       >
         {children}
       </body>

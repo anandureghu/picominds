@@ -2,7 +2,6 @@
 
 * {
   box-sizing: border-box;
-  font-family: "Fustat";
 }
 
 html {
@@ -48,7 +47,6 @@ html {
   --font-highlight: var(--font-highlight);
   --font-body: var(--font-body);
   --font-secondary: var(--font-secondary);
-  --font-sign: var(--font-sign);
   --font-serif: var(--font-serif);
 
   --text-xl: var(--step-0);
@@ -100,7 +98,7 @@ html {
 
 @layer components {
   .app-container {
-    @apply max-w-[1220px] max-md:max-w-[950px] max-sm:max-w-[375px];
+    @apply max-w-[1220px] max-md:max-w-[950px] max-sm:max-w-[375px] mx-auto;
   }
 
   /* Hide scrollbar for Chrome, Safari, and Opera */
