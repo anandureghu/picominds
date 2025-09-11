@@ -115,4 +115,12 @@ html {
   .no-scrollbar {
     -ms-overflow-style: none;
   }
+
+  .section-title {
+    @apply text-[60px] font-body font-bold leading-[60px] border-l-[10px] border-yellow-500 px-[50px];
+  }
+
+  .app-blur {
+    @apply bg-black/10 backdrop-blur-[100px] max-sm:backdrop-blur-[50px];
+  }
 }
