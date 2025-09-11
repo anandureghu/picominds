@@ -3,6 +3,7 @@ import Header from "@/components/sections/landingpage/header";
 import BackgroundImages from "@/components/background-images";
 import Why from "@/components/sections/landingpage/why";
 import Services from "@/components/sections/landingpage/services";
+import Quote from "@/components/sections/landingpage/quote";
 
 const page = () => {
   return (
@@ -13,6 +14,7 @@ const page = () => {
         <Header />
         <Why />
         <Services />
+        <Quote />
       </div>
     </div>
   );

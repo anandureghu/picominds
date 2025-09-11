@@ -12,8 +12,8 @@ import Image from "next/image";
 
 const BackgroundImages = () => {
   return (
-    <div className="absolute top-0 left-0 max-w-screen w-screen overflow-x-hidden h-full z-[0] flex flex-col justify-start items-start">
-      <div className="relative">
+    <div className="absolute top-0 left-0 max-w-screen w-screen overflow-x-hidden no-scrollbar h-full z-[0]">
+      <div className="relative flex flex-col justify-start items-start">
         <Image src={P} alt="P" className="relative top-[10vh]" />
         <Image src={i} alt="i" className="relative top-[10vh]" />
         <Image src={C} alt="C" className="relative top-[10vh]" />
@@ -24,7 +24,11 @@ const BackgroundImages = () => {
           className="relative top-[10vh] scale-150 my-52 transform -translate-x-[20%]"
         />
         <Image src={i} alt="i" className="relative top-[10vh]" />
-        <Image src={N} alt="N" className="relative top-[10vh]" />
+        <Image
+          src={N}
+          alt="N"
+          className="relative top-[10vh] scale-150 my-52 transform -translate-x-[20%]"
+        />
         <Image src={D} alt="D" className="relative top-[10vh]" />
         <Image src={S} alt="S" className="relative top-[10vh]" />
 
