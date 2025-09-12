@@ -6,6 +6,7 @@ import Services from "@/components/sections/landingpage/services";
 import Quote from "@/components/sections/landingpage/quote";
 import Timeline from "@/components/sections/landingpage/timeline";
 import Clients from "@/components/sections/landingpage/clients";
+import Testimonials from "@/components/sections/landingpage/testimonials";
 
 const page = () => {
   return (
@@ -19,6 +20,7 @@ const page = () => {
         <Quote />
         <Timeline />
         <Clients />
+        <Testimonials />
       </div>
     </div>
   );
