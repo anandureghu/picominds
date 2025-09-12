@@ -32,7 +32,7 @@ const fustat = Fustat({
 });
 
 export const metadata: Metadata = {
-  title: "Pico Minds",
+  title: "PiCOMiNDS",
   description: "Tiny Minds, Big Impact!",
 };
 
