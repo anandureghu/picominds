@@ -5,6 +5,7 @@ import Why from "@/components/sections/landingpage/why";
 import Services from "@/components/sections/landingpage/services";
 import Quote from "@/components/sections/landingpage/quote";
 import Timeline from "@/components/sections/landingpage/timeline";
+import Clients from "@/components/sections/landingpage/clients";
 
 const page = () => {
   return (
@@ -17,6 +18,7 @@ const page = () => {
         <Services />
         <Quote />
         <Timeline />
+        <Clients />
       </div>
     </div>
   );
