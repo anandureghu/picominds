@@ -42,9 +42,9 @@ const Quote = () => {
         <p className="text-center text-3xl" id="text">
           At Picominds, we believe greatness begins small. From the tiniest
           sparks of thought, we craft designs that grow, evolve, and echo far
-          beyond their origin. Every idea, no matter how small, carries the
-          power to create big impact — shaping brands, moving people, and
-          transforming the world.
+          beyond their origin. <br /> Every idea, no matter how small, carries
+          the power to create big impact. <br /> shaping brands, moving people,
+          and transforming the world.
         </p>
         <p className="transform translate-x-[50px] flex items-center justify-end text-xl">
           - tiny minds, big impact 💡
