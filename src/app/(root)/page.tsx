@@ -1,9 +1,10 @@
 import React from "react";
-import Header from "@/components/sections/landingpage/header";
 import BackgroundImages from "@/components/background-images";
+import Header from "@/components/sections/landingpage/header";
 import Why from "@/components/sections/landingpage/why";
 import Services from "@/components/sections/landingpage/services";
 import Quote from "@/components/sections/landingpage/quote";
+import Timeline from "@/components/sections/landingpage/timeline";
 
 const page = () => {
   return (
@@ -15,6 +16,7 @@ const page = () => {
         <Why />
         <Services />
         <Quote />
+        <Timeline />
       </div>
     </div>
   );

@@ -1,0 +1,153 @@
+"use client";
+
+import React, { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image, { StaticImageData } from "next/image";
+
+import Hexagon from "@/assets/icons/hexagon.svg";
+import Bulb from "@/assets/icons/bulb.png";
+import Pencil from "@/assets/icons/pencil.png";
+import Tools from "@/assets/icons/tools.png";
+import { cn } from "@/lib/utils";
+
+gsap.registerPlugin(ScrollTrigger);
+
+interface TimelineItemType {
+  img: StaticImageData;
+  title: string;
+  description: string;
+  className: React.ComponentProps<"div">["className"];
+}
+
+interface TimeLineItemProps extends TimelineItemType {
+  id: string;
+}
+
+const items: TimelineItemType[] = [
+  {
+    img: Bulb,
+    title: "Idea Sync",
+    description: "We listen, question, and understand your vision.",
+    className: "top-[50%] left-[10%] max-w-1/4",
+  },
+  {
+    img: Pencil,
+    title: "Design & Plan",
+    description: "We mock it, map it, and timeline it.",
+    className:
+      "top-[10%] left-[50%] transform -translate-x-1/2 max-w-1/4 flex-col-reverse items-center text-center",
+  },
+  {
+    img: Tools,
+    title: "Build & Deliver",
+    description: "Code, test, launch. Then support as your partner.",
+    className:
+      "bottom-[65%] right-[25%] transform translate-x-1/2 max-w-1/4 w-full flex-col-reverse items-end text-right",
+  },
+];
+
+const TimeLineItem = ({
+  img,
+  title,
+  description,
+  id,
+  className,
+}: TimeLineItemProps) => {
+  return (
+    <div
+      className={cn(
+        "flex flex-col gap-5 absolute will-change-transform",
+        className
+      )}
+      id={id}
+    >
+      <div className={cn("relative w-fit")}>
+        <Image src={Hexagon} width={100} height={100} alt="hexagon" />
+        <Image
+          src={img}
+          width={100}
+          height={100}
+          alt={title}
+          className="absolute -top-1/2 -right-1/2 transform -translate-x-1/4 translate-y-1/4"
+        />
+      </div>
+      <main className="flex flex-col gap-3">
+        <h2 className="text-4xl font-serif">{title}</h2>
+        <p className="text-2xl text-indigo-300">{description}</p>
+      </main>
+    </div>
+  );
+};
+
+const TimelineAnimation = () => {
+  const container = useRef<HTMLDivElement | null>(null);
+  const timeLinePath = useRef<SVGPathElement>(null);
+
+  useGSAP(
+    () => {
+      const lineLength = timeLinePath.current?.getTotalLength() || 0;
+
+      // Setup stroke dash properties
+      gsap.set(timeLinePath.current, {
+        strokeDasharray: lineLength,
+        strokeDashoffset: lineLength,
+      });
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: container.current,
+          start: "top 80%",
+          end: "bottom 80%",
+          scrub: true,
+        },
+      });
+
+      tl.to(timeLinePath.current, {
+        strokeDashoffset: 0,
+        ease: "power1.inOut",
+      })
+        .from("#timeline-1", { scale: 0, ease: "back.out" }, "-=10%")
+        .from("#timeline-2", { scale: 0, ease: "back.out" }, "-=10%")
+        .from("#timeline-3", { scale: 0, ease: "back.out" }, "-=10%");
+    },
+    { scope: container }
+  );
+
+  return (
+    <div className="app-container relative mt-[200px]" ref={container}>
+      <svg
+        width="1116"
+        height="223"
+        viewBox="0 0 1116 223"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="w-full"
+      >
+        <path
+          d="M0.666667 160.5C0.666667 163.446 3.05448 165.833 6 165.833C8.94552 165.833 11.3333 163.446 11.3333 160.5C11.3333 157.554 8.94552 155.167 6 155.167C3.05448 155.167 0.666667 157.554 0.666667 160.5ZM554 218.5L553.774 217.526L554 218.5ZM929.5 31L929.23 30.0372L929.5 31ZM1116 8.99987L1107.95 0.721733L1104.81 11.8325L1116 8.99987ZM162.5 160.5L162.318 161.483L162.5 160.5ZM554 218.5L554.226 219.474C633.418 201.07 688.38 165.053 742.991 128.239C797.607 91.4213 851.858 53.8183 929.77 31.9628L929.5 31L929.23 30.0372C850.964 51.9917 796.463 89.7801 741.873 126.581C687.276 163.385 632.577 199.212 553.774 217.526L554 218.5ZM929.5 31L929.77 31.9628C1039.91 1.06601 1089.3 4.07005 1107.15 7.53139L1107.34 6.54967L1107.53 5.56795C1089.24 2.02272 1039.52 -0.899971 929.23 30.0372L929.5 31ZM6 160.5C6.3923 161.42 6.39195 161.42 6.39178 161.42C6.39196 161.42 6.39197 161.42 6.39233 161.42C6.39307 161.42 6.39453 161.419 6.39671 161.418C6.40108 161.416 6.40834 161.413 6.41852 161.409C6.43886 161.4 6.47084 161.387 6.51449 161.37C6.60179 161.334 6.73582 161.281 6.917 161.212C7.27936 161.073 7.83036 160.87 8.57347 160.617C10.0597 160.111 12.3144 159.407 15.3653 158.623C21.4672 157.055 30.755 155.167 43.451 153.908C68.8422 151.389 107.872 151.383 162.318 161.483L162.5 160.5L162.682 159.517C108.067 149.385 68.8472 149.379 43.2536 151.918C30.4571 153.187 21.0688 155.093 14.8676 156.686C11.7671 157.483 9.46355 158.202 7.92937 158.723C7.1623 158.984 6.58759 159.196 6.20178 159.344C6.00888 159.418 5.86321 159.476 5.76434 159.516C5.71491 159.536 5.67717 159.551 5.65108 159.562C5.63804 159.567 5.6279 159.572 5.62068 159.575C5.61706 159.576 5.61417 159.577 5.61201 159.578C5.61093 159.579 5.60985 159.579 5.60931 159.579C5.60841 159.58 5.6077 159.58 6 160.5ZM162.5 160.5L162.318 161.483C182.94 165.309 213.272 171.876 248.309 179.322C283.336 186.767 323.048 195.088 362.401 202.414C401.752 209.74 440.761 216.075 474.382 219.547C507.964 223.014 536.297 223.641 554.226 219.474L554 218.5L553.774 217.526C536.203 221.609 508.168 221.025 474.587 217.558C441.045 214.094 402.097 207.77 362.767 200.448C323.441 193.126 283.75 184.81 248.725 177.366C213.709 169.924 183.339 163.349 162.682 159.517L162.5 160.5Z"
+          stroke="#5501FF"
+          strokeWidth="2"
+          fill="none"
+          ref={timeLinePath}
+        />
+      </svg>
+
+      {items.map((item, index) => {
+        return (
+          <TimeLineItem
+            key={item.title}
+            img={item.img}
+            title={item.title}
+            description={item.description}
+            id={`timeline-${index + 1}`}
+            className={item.className}
+          />
+        );
+      })}
+    </div>
+  );
+};
+
+export default TimelineAnimation;
