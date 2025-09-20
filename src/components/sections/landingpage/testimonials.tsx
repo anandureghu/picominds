@@ -1,4 +1,4 @@
-import TextReveal from "@/components/ui/text-reveal";
+import TextReveal from "@/components/client/text-reveal";
 import Image from "next/image";
 import React from "react";
 

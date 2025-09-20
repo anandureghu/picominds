@@ -32,6 +32,16 @@ const BackgroundImages = () => {
         <Image src={D} alt="D" className="relative top-[10vh]" />
         <Image src={S} alt="S" className="relative top-[10vh]" />
 
+        <Image src={P} alt="P" className="relative top-[10vh]" />
+        <Image src={i} alt="i" className="relative top-[10vh]" />
+        <Image src={C} alt="C" className="relative top-[10vh]" />
+        <Image src={O} alt="O" className="relative top-[10vh]" />
+        <Image
+          src={M}
+          alt="M"
+          className="relative top-[10vh] scale-150 my-52 transform -translate-x-[20%]"
+        />
+
         <div className="absolute top-0 left-0 h-full w-full bg-black/10 app-blur" />
       </div>
     </div>

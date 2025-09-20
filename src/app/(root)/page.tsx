@@ -7,6 +7,7 @@ import Quote from "@/components/sections/landingpage/quote";
 import Timeline from "@/components/sections/landingpage/timeline";
 import Clients from "@/components/sections/landingpage/clients";
 import Testimonials from "@/components/sections/landingpage/testimonials";
+import Contact from "@/components/sections/landingpage/contact";
 
 const page = () => {
   return (
@@ -21,6 +22,7 @@ const page = () => {
         <Timeline />
         <Clients />
         <Testimonials />
+        <Contact />
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 
-import TextReveal from "@/components/ui/text-reveal";
+import TextReveal from "@/components/client/text-reveal";
 
 const Quote = () => {
   return (

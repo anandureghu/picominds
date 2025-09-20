@@ -14,7 +14,7 @@ const Button = ({
   return (
     <button
       className={cn(
-        "px-[20px] py-2 border-[0.5px] border-indigo-50 rounded-full bg-gradient-to-r from-indigo-900 to-indigo-950 cursor-pointer flex items-center gap-2 transform transition-transform duration-300 ease-out",
+        "px-[20px] py-2 border-[0.5px] border-indigo-50 rounded-full bg-gradient-to-r from-indigo-900 to-indigo-950 cursor-pointer flex items-center justify-center gap-2 transform transition-transform duration-300 ease-out",
         className,
         isHover && "scale-[1.01]"
       )}
