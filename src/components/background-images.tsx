@@ -10,38 +10,37 @@ import S from "@/assets/background/S.svg";
 
 import Image from "next/image";
 
+const Picominds = () => {
+  return (
+    <>
+      <Image src={P} alt="P" className="relative top-[10vh]" />
+      <Image src={i} alt="i" className="relative top-[10vh]" />
+      <Image src={C} alt="C" className="relative top-[10vh]" />
+      <Image src={O} alt="O" className="relative top-[10vh]" />
+      <Image
+        src={M}
+        alt="M"
+        className="relative top-[10vh] scale-150 my-52 transform -translate-x-[20%]"
+      />
+      <Image src={i} alt="i" className="relative top-[10vh]" />
+      <Image
+        src={N}
+        alt="N"
+        className="relative top-[10vh] scale-150 my-52 transform -translate-x-[20%]"
+      />
+      <Image src={D} alt="D" className="relative top-[10vh]" />
+      <Image src={S} alt="S" className="relative top-[10vh]" />
+    </>
+  );
+};
+
 const BackgroundImages = () => {
   return (
     <div className="absolute top-0 left-0 max-w-screen w-screen overflow-x-hidden no-scrollbar h-full z-[0]">
       <div className="relative flex flex-col justify-start items-start">
-        <Image src={P} alt="P" className="relative top-[10vh]" />
-        <Image src={i} alt="i" className="relative top-[10vh]" />
-        <Image src={C} alt="C" className="relative top-[10vh]" />
-        <Image src={O} alt="O" className="relative top-[10vh]" />
-        <Image
-          src={M}
-          alt="M"
-          className="relative top-[10vh] scale-150 my-52 transform -translate-x-[20%]"
-        />
-        <Image src={i} alt="i" className="relative top-[10vh]" />
-        <Image
-          src={N}
-          alt="N"
-          className="relative top-[10vh] scale-150 my-52 transform -translate-x-[20%]"
-        />
-        <Image src={D} alt="D" className="relative top-[10vh]" />
-        <Image src={S} alt="S" className="relative top-[10vh]" />
-
-        <Image src={P} alt="P" className="relative top-[10vh]" />
-        <Image src={i} alt="i" className="relative top-[10vh]" />
-        <Image src={C} alt="C" className="relative top-[10vh]" />
-        <Image src={O} alt="O" className="relative top-[10vh]" />
-        <Image
-          src={M}
-          alt="M"
-          className="relative top-[10vh] scale-150 my-52 transform -translate-x-[20%]"
-        />
-
+        {new Array(3).fill(0).map((_, i) => {
+          return <Picominds key={i + 1} />;
+        })}
         <div className="absolute top-0 left-0 h-full w-full bg-black/10 app-blur" />
       </div>
     </div>

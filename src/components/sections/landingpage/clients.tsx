@@ -14,7 +14,7 @@ const Clients = () => {
           Trusted by forward-thinking <br /> brands, startups & creators 🚀
         </h1>
       </header>
-      <main className="flex justify-center items-center mx-auto">
+      <main className="flex justify-center max-sm:flex-col gap-10 items-center mx-auto">
         {clients.map((client) => {
           return (
             <Image

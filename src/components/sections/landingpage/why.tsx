@@ -7,9 +7,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const Title = () => (
-  <div className="h-screen flex items-center sticky top-0">
+  <div className="h-screen flex items-center sticky top-0 text-5xl">
     <div className="section-title">
-      <h1 className="uppercase text-indigo-300">
+      <h1 className="uppercase text-indigo-300 ">
         Why <br /> Choose
       </h1>
       <h1 className="text-indigo-50">PiCOMiNDS?</h1>
@@ -71,7 +71,7 @@ const Why: React.FC = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="w-full">
+    <section ref={containerRef} className="w-full visible max-md:hidden">
       <div className="app-container flex min-h-screen">
         {/* Left - pinned title */}
         <aside className="flex-1 min-w-[320px]" id="title">

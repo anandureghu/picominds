@@ -98,7 +98,7 @@ const ContactForm = () => {
   };
 
   return (
-    <main className="flex items-start justify-between gap-5 mt-[80px]">
+    <main className="flex items-start justify-between gap-5 mt-[80px] max-md:flex-col max-md:gap-10">
       <div className="flex-1 flex flex-col gap-7">
         <div className="flex flex-col gap-3">
           <h3 className="text-indigo-300 text-xl">category</h3>
@@ -114,30 +114,34 @@ const ContactForm = () => {
             onChange={(value) => setFormData({ ...formData, emotion: value })}
           />
         </div>
-        <p>
-          It&apos;s currently 
-          {date.getHours() % 12 < 10
-            ? `0${date.getHours() % 12}`
-            : date.getHours() % 12}
-          :
-          {date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes()}{" "}
-          {date.getHours() > 12 ? "PM" : "AM"}
-           in India 🇮🇳. Feel free to send Us a message, We will get back to you
-          as soon as possible.
-        </p>
-        <p>
-          You can also contact us at <br />
-          <a
-            href="mailTo:info.picominds@gmail.com"
-            className="font-semibold underline cursor-pointer"
-          >
-            info.picominds@gmail.com
-          </a>
-        </p>
+        <div className="max-md:hidden">
+          <p>
+            It&apos;s currently 
+            {date.getHours() % 12 < 10
+              ? `0${date.getHours() % 12}`
+              : date.getHours() % 12}
+            :
+            {date.getMinutes() < 10
+              ? `0${date.getMinutes()}`
+              : date.getMinutes()}{" "}
+            {date.getHours() > 12 ? "PM" : "AM"}
+             in India 🇮🇳. Feel free to send Us a message, We will get back to
+            you as soon as possible.
+          </p>
+          <p>
+            You can also contact us at <br />
+            <a
+              href="mailTo:info.picominds@gmail.com"
+              className="font-semibold underline cursor-pointer"
+            >
+              info.picominds@gmail.com
+            </a>
+          </p>
+        </div>
       </div>
       <form
         onSubmit={handleSubmit}
-        className="flex-1 bg-black/10 rounded-4xl p-10 flex flex-col gap-3"
+        className="flex-1 bg-black/10 rounded-4xl p-10 flex flex-col gap-3 max-md:w-full max-md:p-2 max-md:rounded-lg"
       >
         <Input
           placeholder="Full Name"
@@ -182,6 +186,31 @@ const ContactForm = () => {
         <Button type="submit" className="text-2xl" disabled={loading}>
           {loading ? "Sending..." : "Send Message"}
         </Button>
+
+        <div className="hidden max-md:flex mt-10 flex-col gap-7">
+          <p>
+            It&apos;s currently 
+            {date.getHours() % 12 < 10
+              ? `0${date.getHours() % 12}`
+              : date.getHours() % 12}
+            :
+            {date.getMinutes() < 10
+              ? `0${date.getMinutes()}`
+              : date.getMinutes()}{" "}
+            {date.getHours() > 12 ? "PM" : "AM"}
+             in India 🇮🇳. Feel free to send Us a message, We will get back to
+            you as soon as possible.
+          </p>
+          <p>
+            You can also contact us at <br />
+            <a
+              href="mailTo:info.picominds@gmail.com"
+              className="font-semibold underline cursor-pointer"
+            >
+              info.picominds@gmail.com
+            </a>
+          </p>
+        </div>
       </form>
     </main>
   );
