@@ -1,4 +1,4 @@
-import TextReveal from "@/components/ui/text-reveal";
+import TextReveal from "@/components/client/text-reveal";
 import Image from "next/image";
 import React from "react";
 
@@ -28,7 +28,7 @@ const testimonials: TestimonialType[] = [
 
 const Testimonial = ({ testimonial, img, name, position }: TestimonialType) => {
   return (
-    <div className="w-1/2 flex flex-col items-center gap-3">
+    <div className="w-1/2 max-md:w-full max-md:text-justify flex flex-col items-center gap-3">
       <TextReveal className="text-center text-3xl">{testimonial}</TextReveal>
       <Image
         src={img}

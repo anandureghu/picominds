@@ -25,7 +25,7 @@ const Services = () => {
       topImg: Rocket,
     },
     {
-      title: "UI/UX\nDesign",
+      title: "UI/UX Design",
       description: "Pixel-perfect, user-first design that converts.",
       bottomImg: Puzzle,
       topImg: PaintingKit,
@@ -96,7 +96,7 @@ const Services = () => {
                   key={service.title}
                   className="relative h-full overflow-visible flex flex-col items-center justify-center min-w-screen w-screen"
                 >
-                  <div className="relative w-1/2 transform translate-x-[10%]">
+                  <div className="relative w-fit max-w-1/2 md:max-w-1/3  transform translate-x-[10%]">
                     <h1 className="font-serif text-7xl whitespace-pre-line mb-5">
                       {service.title}
                     </h1>
@@ -107,14 +107,14 @@ const Services = () => {
                       alt={`top-image-${service.title}`}
                       width={200}
                       height={200}
-                      className="absolute top-0 right-0 transform translate-x-[5vw] -translate-y-[10vw]"
+                      className="absolute top-0 right-0 transform translate-x-[150px] -translate-y-[150px] max-md:translate-x-[150px] max-md:-translate-y-[200px]"
                     />
                     <Image
                       src={service.bottomImg}
                       alt={`bottom-image-${service.title}`}
                       width={200}
                       height={200}
-                      className="absolute bottom-0 left-0 transform translate-y-[10vw] -translate-x-[15vw]"
+                      className="absolute bottom-0 left-0 transform translate-y-[150px] -translate-x-[200px] max-md:-translate-x-[150px]"
                     />
                   </div>
                 </div>

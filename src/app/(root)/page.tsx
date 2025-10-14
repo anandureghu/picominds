@@ -7,6 +7,8 @@ import Quote from "@/components/sections/landingpage/quote";
 import Timeline from "@/components/sections/landingpage/timeline";
 import Clients from "@/components/sections/landingpage/clients";
 import Testimonials from "@/components/sections/landingpage/testimonials";
+import Contact from "@/components/sections/landingpage/contact";
+import WhyMobile from "@/components/sections/landingpage/why-mobile";
 
 const page = () => {
   return (
@@ -16,11 +18,13 @@ const page = () => {
       <div className="relative z-10 no-scrollbar">
         <Header />
         <Why />
+        <WhyMobile />
         <Services />
         <Quote />
         <Timeline />
         <Clients />
         <Testimonials />
+        <Contact />
       </div>
     </div>
   );
