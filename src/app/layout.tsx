@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
-import { Fahkwang, Fredoka, Fustat } from "next/font/google";
+import { Fahkwang, Fredoka, Fustat, Gilda_Display } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/navbar";
+// import Navbar from "@/components/navbar";
 
 // highlight font
 const fahkwang = Fahkwang({
   variable: "--font-highlight",
   weight: ["200", "300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+});
+
+// serif font
+const gilda = Gilda_Display({
+  variable: "--font-serif",
+  weight: "400",
   subsets: ["latin"],
 });
 
@@ -25,7 +32,7 @@ const fustat = Fustat({
 });
 
 export const metadata: Metadata = {
-  title: "Pico Minds",
+  title: "PiCOMiNDS",
   description: "Tiny Minds, Big Impact!",
 };
 
@@ -40,9 +47,8 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="Picominds" />
       </head>
       <body
-        className={`${fahkwang.variable} ${fustat.variable} ${fredoka.variable} antialiased`}
+        className={`${fahkwang.variable} ${gilda.variable} ${fredoka.variable} ${fustat.variable} antialiased text-indigo-200 font-secondary`}
       >
-        <Navbar />
         {children}
       </body>
     </html>
