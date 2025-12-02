@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fahkwang, Fredoka, Fustat, Gilda_Display } from "next/font/google";
+import { Fahkwang, Fredoka, Fustat, Gilda_Display } from "next/font/google";
 import "./globals.css";
 // import Navbar from "@/components/navbar";
 
@@ -7,6 +8,13 @@ import "./globals.css";
 const fahkwang = Fahkwang({
   variable: "--font-highlight",
   weight: ["200", "300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+});
+
+// serif font
+const gilda = Gilda_Display({
+  variable: "--font-serif",
+  weight: "400",
   subsets: ["latin"],
 });
 
