@@ -3,7 +3,7 @@ import ContactForm from "./contact-form";
 
 const Contact = () => {
   return (
-    <section className="app-container py-[100px]">
+    <section className="app-container py-[100px]" id="contact">
       <header>
         <h1 className="text-indigo-50 text-5xl font-serif mb-5">
           Got an idea? <br /> Let&apos;s bring it to life.

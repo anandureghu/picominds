@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import TextLogo from "@/assets/text-logo/picominds.svg";
 import Button from "@/components/ui/button";
+import Link from "next/link";
 
 const Header = () => {
   return (
@@ -18,9 +19,11 @@ const Header = () => {
           on a mission to bring powerful digital ideas to life.
         </h3>
         <div className="flex items-center justify-center mt-[20px]">
-          <Button className="text-[20px] font-semibold">
-            get started with a project
-          </Button>
+          <Link href="#contact" scroll={true}>
+            <Button className="text-[20px] font-semibold">
+              get started with a project
+            </Button>
+          </Link>
         </div>
       </div>
     </main>

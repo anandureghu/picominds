@@ -56,7 +56,7 @@ const Services = () => {
         timeline.to(wrapper.current, {
           x: -amountToScroll,
           ease: "none",
-          // zIndex: 9999999,
+          zIndex: 9999,
           scrollTrigger: {
             trigger: container.current,
             start: "top top",
@@ -64,7 +64,8 @@ const Services = () => {
             scrub: true,
             pin: true,
             anticipatePin: 1,
-            pinType: "fixed",
+
+            invalidateOnRefresh: true,
           },
         });
         // .to(container.current, { position: "relative" }, "<");
@@ -76,7 +77,7 @@ const Services = () => {
   );
 
   return (
-    <section className="relative w-full h-full">
+    <section className="relative w-full h-full z-50">
       <div className="min-h-screen py-[50px] overflow-hidden" ref={container}>
         <header className="flex items-center justify-between app-container flex-wrap gap-5">
           <h1 className="section-title text-indigo-50 font-semibold">
