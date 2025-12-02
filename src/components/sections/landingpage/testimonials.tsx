@@ -1,4 +1,5 @@
 import TextReveal from "@/components/client/text-reveal";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import React from "react";
 
@@ -12,17 +13,32 @@ interface TestimonialType {
 const testimonials: TestimonialType[] = [
   {
     testimonial:
-      "Working with the Picominds team has been such a pleasure! We took on a significant project to rebuild our entire platform and the team approached the project with our best interests in mind. They continue to prioritize the end user experience and offer amazing expertise in all of the areas we lack internally. I would personally be lost without this team, their ability to problem solve, their openness to feedback and desire to build the product like it is their own.",
+      "The UI/UX Picominds delivered for our payroll project was beyond our expectations. They converted a very complex system into a clean, intuitive interface that our clients now love working with. The attention to detail, typography, color balance, and user flows were absolutely on point. Their design understanding is world-class, and their communication made the entire process smooth.",
     img: "https://img.freepik.com/premium-photo/childs-head-made-paper-yellow-background_185193-150613.jpg",
-    name: "John Doe",
-    position: "CEO & Founder @ Picominds",
+    name: "Bichu",
+    position: "Interland Software Solutions",
   },
   {
     testimonial:
-      "Working with Picominds and their recommendation service has been a game-changer for our occupational prevention efforts. Our customers are extremely satisfied with the tool's impressive technical capabilities and data-driven approach. But what truly sets it apart is the intuitive and modern user experience it offers, making it a breeze for our clients to navigate. By leveraging this service, our customers have successfully tackled presenteeism and absenteeism, making a significant impact on their workforce's well-being. We highly recommend Picominds to any organization looking to optimize their occupational health and drive positive change.",
+      "Picominds created a stunning portfolio website for our wedding agency. The design is elegant, fast, and beautifully showcases our films and photography work. Most importantly, they understood our creative vision and translated it into a website that truly reflects our brand. Clients now compliment our website all the time, and it has improved our lead conversions significantly.",
     img: "https://img.freepik.com/premium-photo/childs-head-made-paper-yellow-background_185193-150613.jpg",
-    name: "John Doe",
-    position: "CEO & Founder @ Picominds",
+    name: "Melvin",
+    position: "CEO & Founder @ Marry Gold Films",
+  },
+  {
+    testimonial:
+      "Picominds built exactly what our business needed. We were managing our latex stock, customers, suppliers and daily delivery manually, and the new app has transformed the way we work. The system is fast, accurate, and tailored perfectly to our workflow. Their understanding of our business problems and ability to turn them into a simple app was impressive. I’ve never seen our operations run this smoothly.",
+    img: "https://img.freepik.com/premium-photo/childs-head-made-paper-yellow-background_185193-150613.jpg",
+    name: "Alan",
+    position: "Founder @ Kalayil Latext & Traders",
+  },
+
+  {
+    testimonial:
+      "Working with Picominds was an absolute delight. They built our entire Shopify store with a premium look that matches our spice brand perfectly. The product pages, checkout flow, and mobile optimization were done exceptionally well. Our online sales increased immediately after launch, and the website feels clean, modern, and easy to manage. We highly recommend them for any e-commerce project.",
+    img: "https://img.freepik.com/premium-photo/childs-head-made-paper-yellow-background_185193-150613.jpg",
+    name: "Dhanya P",
+    position: "Co-Founder @ The Herbary Premium Spices",
   },
 ];
 
@@ -52,13 +68,25 @@ const Testimonials = () => {
         </h1>
       </header>
       <main className="flex flex-col gap-[100px]">
-        <div className="flex items-center justify-start">
+        {/* <div className="flex items-center justify-start">
           <Testimonial {...testimonials[0]} />
         </div>
 
         <div className="flex items-center justify-end">
           <Testimonial {...testimonials[1]} />
-        </div>
+        </div> */}
+
+        {testimonials.map((t, i) => (
+          <div
+            className={cn(
+              "flex items-center",
+              i % 2 === 0 ? "justify-start" : "justify-end"
+            )}
+            key={i}
+          >
+            <Testimonial {...t} />
+          </div>
+        ))}
       </main>
     </section>
   );
